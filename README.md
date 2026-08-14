@@ -1,3 +1,7 @@
+<img width="2528" height="1304" alt="WEb secured" src="https://github.com/user-attachments/assets/a1f71702-65bf-4cf8-ac5c-2d0ce3b946ef" />
+
+
+
 # aws-high-availability-web-application-deployment
 
 ## Project Overview
