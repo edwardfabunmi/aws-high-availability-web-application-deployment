@@ -8,32 +8,33 @@ The architecture was designed using multiple Availability Zones and AWS managed 
 The project includes:
 
 * **Custom Amazon VPC**
-* Public and private subnets across multiple Availability Zones
-* Internet Gateway
-* NAT Gateway
-* Security Groups
-
+* *Public and private subnets across multiple Availability Zones*
+* *Internet Gateway*
+* *NAT Gateway*
+* *Security Groups*
+* *Route Table*
+<br>
 
 * **Storage & Compute Infrastructure**
-* **Amazon EFS** (with EFS Access Point)
-* **Jump Server**
-* **Amazon EC2** managed via Launch Template & Auto Scaling Group
-
+* *Amazon EFS (with EFS Access Point)*
+* *Jump Server*
+* *Amazon EC2 managed via Launch Template & Auto Scaling Group*
+<br>
 
 * **Traffic Management & Routing**
-* **Application Load Balancer** with Target Group
-* **Amazon Route 53** (integrated with Namecheap DNS)
+* *Application Load Balancer with Target Group*
+* *Amazon Route 53 (integrated with Namecheap DNS)*
 
-
+<br>
 * **Security & Encryption**
-* **AWS Certificate Manager (ACM)** for HTTPS/SSL termination
+* *AWS Certificate Manager (ACM) for HTTPS/SSL termination*
 
 
 * **Monitoring & Alerting**
-* **Datadog monitoring**
-* **Slack alert notifications**
+* *Datadog monitoring*
+* *Slack alert notifications*
 
-## Project Overview
+## Architecture
 
 The application follows a highly available architecture where the Application Load Balancer distributes incoming traffic across EC2 instances running in private subnets.
 
@@ -42,6 +43,7 @@ The EC2 instances are managed by an Auto Scaling Group and share persistent stor
 Datadog monitors the infrastructure and sends alerts to Slack when defined thresholds are exceeded.
 
 ## Architecture Flow
+<br>
 
 ```mermaid
 flowchart TD
@@ -80,6 +82,7 @@ flowchart TD
 ```
 
 ## AWS Services Used
+<br>
 
 | Service | Purpose |
 | :--- | :--- |
@@ -98,3 +101,39 @@ flowchart TD
 | **Datadog** | Infrastructure monitoring |
 | **Slack** | Monitoring notifications |
 | **Namecheap** | Domain registration/DNS delegation |
+
+<br>
+
+## Deployment Documentation 
+
+* [High Availability Network](docs/01-high-availability-network.md)
+* [Amazon EFS](02-efs.md)
+* [Datadog Setup](03-datadog.md)
+* [Bastion Host](04-jumperserver.md)
+* [Slack Integration](05-slack-integration.md)
+* [Datadog Monitoring & Alerting](datadog-monitoring.md)
+* [Web Application Deployment](07-web-application.md)
+* [Route 53 DNS](08-route53.md)
+* [HTTPS / SSL](09-https-ssl.md)
+* [Project Validation](#project-validation)
+* [Troubleshooting](#troubleshooting)
+
+<br>
+
+## SChallenges & Lessons Learned <br>
+
+Some of the major areas that required careful configuration included:
+
+* **VPC Architecture:** Designing the VPC so public and private resources were properly separated.
+* **Routing & Traffic:** Configuring route tables correctly for internet and NAT traffic.
+* **Security & Access:** Establishing the correct security group relationships between the ALB, EC2 instances, and EFS.
+* **Storage Integration:** Configuring EFS mount targets across Availability Zones.
+* **Automation:** Automating server configuration through EC2 User Data.
+* **Monitoring & Alerting:** Configuring Datadog monitoring and Slack notifications.
+* **High Availability & Health Checks:** Ensuring Auto Scaling instances passed ALB health checks.
+* **DNS Management:** Delegating DNS management from Namecheap to Route 53.
+* **SSL/TLS Validation:** Validating the ACM certificate through DNS.
+* **Traffic Encryption:** Configuring HTTPS correctly on the Application Load Balancer.
+
+> **Key Takeaway:** The project reinforced the importance of understanding how individual AWS services interact rather than configuring each service independently.
+
