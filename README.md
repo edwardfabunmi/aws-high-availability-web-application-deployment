@@ -120,7 +120,7 @@ flowchart TD
 
 <br>
 
-## SChallenges & Lessons Learned <br>
+## Challenges & Lessons Learned
 
 Some of the major areas that required careful configuration included:
 
@@ -135,5 +135,22 @@ Some of the major areas that required careful configuration included:
 * **SSL/TLS Validation:** Validating the ACM certificate through DNS.
 * **Traffic Encryption:** Configuring HTTPS correctly on the Application Load Balancer.
 
+The project reinforced the importance of understanding how individual AWS services interact rather than configuring each service independently.
+
+## What I Learned
+
+Through this project, I gained practical experience designing and deploying a highly available AWS environment.
+
+The project helped me understand how networking, compute, storage, load balancing, monitoring, DNS, and security services work together to support a production-style application.
+
+More importantly, I learned that high availability is not achieved by a single AWS service. It requires designing multiple layers of the infrastructure to remove single points of failure.
+
 > **Key Takeaway:** The project reinforced the importance of understanding how individual AWS services interact rather than configuring each service independently.
+
+## Author
+**Edward Fabunmi**
+
+Cloud & DevOps Engineer | WordPress Developer | Technical Support Specialist | UI/UX Designer 
+
+*This project was built as part of my hands-on Cloud & DevOps learning journey.*
 
