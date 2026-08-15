@@ -111,16 +111,15 @@ flowchart TD
 ## Deployment Documentation 
 
 * [High Availability Network](docs/01-high-availability-network.md)
-* [Amazon EFS](02-efs.md)
-* [Datadog Setup](03-datadog.md)
-* [Bastion Host](04-jumperserver.md)
-* [Slack Integration](05-slack-integration.md)
-* [Datadog Monitoring & Alerting](datadog-monitoring.md)
-* [Web Application Deployment](07-web-application.md)
-* [Route 53 DNS](08-route53.md)
-* [HTTPS / SSL](09-https-ssl.md)
-* [Project Validation](#project-validation)
-* [Troubleshooting](#troubleshooting)
+* [Amazon EFS](docs/02-efs.md)
+* [Datadog Setup](docs/03-datadog.md)
+* [Bastion Host](docs/04-jumperserver.md)
+* [Slack Integration](docs/05-slack-integration.md)
+* [Datadog Monitoring & Alerting](docs/06-datadog-monitoring.md)
+* [Web Application Deployment](docs/07-web-application.md)
+* [Route 53 DNS](docs/08-route53.md)
+* [HTTPS / SSL](docs/09-https-ssl.md)
+* [Project Validation](docs/10-validation.md)
 
 <br>
 
