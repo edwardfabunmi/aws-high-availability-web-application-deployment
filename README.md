@@ -11,7 +11,7 @@ The architecture was designed using multiple Availability Zones and AWS managed 
 
 The project includes:
 
-* **Custom Amazon VPC**
+**Custom Amazon VPC**
 * *Public and private subnets across multiple Availability Zones*
 * *Internet Gateway*
 * *NAT Gateway*
@@ -19,22 +19,23 @@ The project includes:
 * *Route Table*
 <br>
 
-* **Storage & Compute Infrastructure**
+**Storage & Compute Infrastructure**
 * *Amazon EFS (with EFS Access Point)*
 * *Jump Server*
 * *Amazon EC2 managed via Launch Template & Auto Scaling Group*
 <br>
 
-* **Traffic Management & Routing**
+**Traffic Management & Routing**
 * *Application Load Balancer with Target Group*
 * *Amazon Route 53 (integrated with Namecheap DNS)*
 
 <br>
-* **Security & Encryption**
+
+**Security & Encryption**
 * *AWS Certificate Manager (ACM) for HTTPS/SSL termination*
 
 
-* **Monitoring & Alerting**
+**Monitoring & Alerting**
 * *Datadog monitoring*
 * *Slack alert notifications*
 
